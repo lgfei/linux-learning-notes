@@ -1,8 +1,8 @@
 # 下载安装包
-mkdir /usr/local/zookeeper
-mkdir /usr/local/zookeeper/var
-mkdir /usr/local/zookeeper/var/log
-cd /usr/local/zookeeper
+mkdir /usr/local/zookeeper  
+mkdir /usr/local/zookeeper/var  
+mkdir /usr/local/zookeeper/var/log  
+cd /usr/local/zookeeper  
 wget http://apache.org/dist/zookeeper/zookeeper-3.4.14/zookeeper-3.4.14.tar.gz
 
 # 解压
