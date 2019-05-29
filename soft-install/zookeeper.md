@@ -30,5 +30,5 @@ cd /usr/local/zookeeper/zookeeper-3.4.14/bin
 ./zkServer.sh restart  
 
 # 错误排查
-cd /usr/local/zookeeper/zookeeper-3.4.14/bin
+cd /usr/local/zookeeper/zookeeper-3.4.14/bin  
 cat zookeeper.out
