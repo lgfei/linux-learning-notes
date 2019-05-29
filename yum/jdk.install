@@ -1,6 +1,9 @@
 # 查看是否有安装jdk
 rpm -qa | grep jdk
 
+# 卸载已安装jdk
+rpm -qa | grep java | xargs rpm -e --nodeps
+
 # 输入以下命令，查看可用的jdk软件包列表
 yum search java | grep -i --color JDK
 
