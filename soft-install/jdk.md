@@ -14,9 +14,11 @@ yum install java-1.8.0-openjdk-devel.x86_64
 vim /etc/profile
 
 # 添加下面3行至/etc/profile
+<pre><code>
 export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.212.b04-0.el7_6.x86_64  
 export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar  
 export PATH=$PATH:$JAVA_HOME/bin
+</code></pre>
 
 # 让配置生效
 source  /etc/profile
