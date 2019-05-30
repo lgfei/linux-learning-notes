@@ -24,7 +24,9 @@ redis-cli
 
 # 启动失败
 异常日志：WARNING you have Transparent Huge Pages (THP) support enabled in your kernel. This will create latency and memory usage issues with Redis. To fix this issue run the command 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' as root, and add it to your /etc/rc.local in order to retain the setting after a reboot. Redis must be restarted after THP is disabled.  
-在/etc/rc.local 添加如下代码  
+在/etc/rc.local 添加如下代码 
+<pre><code>
 if test -f /sys/kernel/mm/transparent_hugepage/enabled; then  
 echo never > /sys/kernel/mm/transparent_hugepage/enabled  
 fi
+</code></pre>
