@@ -14,10 +14,14 @@ service mysqld status
 mysql -u root
 
 # 重置root密码
+<code>
 use mysql;  
 update user set password=password('yourpassword') where user='root' and host='localhost';  
 flush privileges;  
+</code>
 
 # 授权root用户远程登录
+<code>
 grant all privileges on *.* to 'root'@'%' identified by 'yourpassword' with grant option;  
 flush privileges;
+</code>
