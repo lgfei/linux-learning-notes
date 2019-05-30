@@ -33,9 +33,9 @@ http://ip:27017/
 # 添加管理用户(mongoDB 没有无敌用户root，只有能管理用户的用户 userAdminAnyDatabase)，利用mongo命令连接mongoDB服务器端
 cd /usr/local/mongodb/mongodbserver/bin  
 ./mongo  
-> use admin  
+use admin  
 switched to db admin  
-> db.createUser( {user: "pfnieadmin",pwd: "123456",roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]});  
+db.createUser( {user: "pfnieadmin",pwd: "123456",roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]});  
 添加完用户后可以使用show users或db.system.users.find()查看已有用户.  
 添加完管理用户后，使用db.shutdownServer()关闭MongoDB，并使用权限方式再次开启MongoDB，这里注意不要使用kill直接去杀掉mongodb进程，（如果这样做了，请去data/db目录下删除mongo.lock文件） 
 出现以下错误，是因为用户权限问题 
@@ -48,7 +48,7 @@ _getErrorWithCode@src/mongo/shell/utils.js:25:13
 DB.prototype.shutdownServer@src/mongo/shell/db.js:302:1  
 @(shell):1:1  
 修改用户权限  
->db.updateUser(  
+db.updateUser(  
  "pfnieadmin",  
         {  
            roles : [  
@@ -62,8 +62,8 @@ DB.prototype.shutdownServer@src/mongo/shell/db.js:302:1
 # 使用权限方式启动MongoDB
 在配置文件中添加：auth=true , 然后启动  
 进入mongo shell，使用admin数据库并进行验证，如果不验证，是做不了任何操作的  
-> use admin  
-> db.auth("pfnieadmin","123456")   #认证，返回1表示成功  
+use admin  
+db.auth("pfnieadmin","123456")   #认证，返回1表示成功  
 
 # 将mongod路径添加到系统路径中，方便随处执行mongod命令
 vim /etc/profile  
