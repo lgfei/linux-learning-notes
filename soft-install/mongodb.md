@@ -38,7 +38,7 @@ switched to db admin
 db.createUser( {user: "pfnieadmin",pwd: "123456",roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]});  
 添加完用户后可以使用show users或db.system.users.find()查看已有用户.  
 添加完管理用户后，使用db.shutdownServer()关闭MongoDB，并使用权限方式再次开启MongoDB，这里注意不要使用kill直接去杀掉mongodb进程，（如果这样做了，请去data/db目录下删除mongo.lock文件） 
-出现以下错误，是因为用户权限问题 
+出现以下错误，是因为用户权限问题  
 Error: shutdownServer failed: {  
 "ok" : 0,  
 "errmsg" : "not authorized on admin to execute command { shutdown: 1.0 }",  
@@ -47,7 +47,8 @@ Error: shutdownServer failed: {
 _getErrorWithCode@src/mongo/shell/utils.js:25:13  
 DB.prototype.shutdownServer@src/mongo/shell/db.js:302:1  
 @(shell):1:1  
-修改用户权限  
+修改用户权限
+<pre><code>
 db.updateUser(  
  "pfnieadmin",  
         {  
@@ -57,7 +58,8 @@ db.updateUser(
                      {"role" : "clusterAdmin", "db": "admin"}  
                    ]  
         }  
- )  
+ ) 
+ </code></pre>
 
 # 使用权限方式启动MongoDB
 在配置文件中添加：auth=true , 然后启动  
@@ -77,7 +79,11 @@ ln -s /usr/local/mongobd/mongodbserver/bin/mongo  /usr/bin/mongo
 
 # MongoDB设置为系统服务并且设置开机启动
 vim /etc/rc.d/init.d/mongod  
-内容如下：  
+内容如下：
+<pre><code>
+#!/bin/bash  
+#chkconfig:2345 10 90  
+#description:service mongodb   
 start() {  
 /usr/local/mongodb/mongodbserver/bin/mongod  --config /usr/local/mongodb/mongodbserver/conf/mongodb.conf 
 }  
@@ -103,6 +109,7 @@ restart)
 $"Usage: $0 {start|stop|restart}"  
  exit 1  
 esac
+</code></pre>
 
 保存完成之后，添加脚本执行权限，命令如下：chmod +x /etc/rc.d/init.d/mongod  
 使用下面命令启动，停止，重启  
