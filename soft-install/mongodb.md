@@ -35,7 +35,9 @@ cd /usr/local/mongodb/mongodbserver/bin
 ./mongo  
 use admin  
 switched to db admin  
-db.createUser( {user: "pfnieadmin",pwd: "123456",roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]});  
+<pre><code>
+db.createUser( {user: "pfnieadmin",pwd: "123456",roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]}); 
+</code></pre>
 添加完用户后可以使用show users或db.system.users.find()查看已有用户.  
 添加完管理用户后，使用db.shutdownServer()关闭MongoDB，并使用权限方式再次开启MongoDB，这里注意不要使用kill直接去杀掉mongodb进程，（如果这样做了，请去data/db目录下删除mongo.lock文件） 
 出现以下错误，是因为用户权限问题  
