@@ -31,11 +31,10 @@ http://ip:27017/
 
 # 添加管理用户(mongoDB 没有无敌用户root，只有能管理用户的用户 userAdminAnyDatabase)，利用mongo命令连接mongoDB服务器端
 cd /usr/local/mongodb/mongodbserver/bin  
-./mongo  
-use admin  
-switched to db admin  
+./mongo    
 <pre><code>
-db.createUser( {user: "pfnieadmin",pwd: "123456",roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]}); 
+use admin 
+db.createUser({user:"admin",pwd:"admin",roles:[{ role:"userAdminAnyDatabase", db:"admin" }]}); 
 </code></pre>
 添加完用户后可以使用show users或db.system.users.find()查看已有用户.  
 添加完管理用户后，使用db.shutdownServer()关闭MongoDB，并使用权限方式再次开启MongoDB，这里注意不要使用kill直接去杀掉mongodb进程，（如果这样做了，请去data/db目录下删除mongo.lock文件） 
@@ -51,7 +50,7 @@ DB.prototype.shutdownServer@src/mongo/shell/db.js:302:1
 修改用户权限
 <pre><code>
 db.updateUser(  
- "pfnieadmin",  
+ "admin",  
         {  
            roles : [  
                      {"role" : "userAdminAnyDatabase","db" : "admin"},  
