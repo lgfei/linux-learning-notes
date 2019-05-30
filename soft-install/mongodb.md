@@ -27,8 +27,7 @@ cd /usr/local/mongodb/mongodbserver/bin
 
 # 浏览器访问
 http://ip:27017/  
-页面返回 It looks like you are trying to access MongoDB over HTTP on the native driver port.  
-说明启动成功
+页面返回 It looks like you are trying to access MongoDB over HTTP on the native driver port.  说明启动成功
 
 # 添加管理用户(mongoDB 没有无敌用户root，只有能管理用户的用户 userAdminAnyDatabase)，利用mongo命令连接mongoDB服务器端
 cd /usr/local/mongodb/mongodbserver/bin  
