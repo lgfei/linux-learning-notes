@@ -68,6 +68,6 @@ chown $(id -u):$(id -g) $HOME/.kube/config
 </pre>
 
 
-[m.unixhot.com](http://m.unixhot.com/kubernetes/kubernetes-aliyun.html)
-[www.kubernetes.org.cn](https://www.kubernetes.org.cn/5462.html)
-[connection to the server localhost:8080 was refused...](https://www.jianshu.com/p/6fa06b9bbf6a)
+[m.unixhot.com](http://m.unixhot.com/kubernetes/kubernetes-aliyun.html)  
+[www.kubernetes.org.cn](https://www.kubernetes.org.cn/5462.html)  
+[connection to the server localhost:8080 was refused...](https://www.jianshu.com/p/6fa06b9bbf6a)  
