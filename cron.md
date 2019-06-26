@@ -6,17 +6,17 @@ service crond stop
 service crond reload
 </code></pre>
 
-# 全局配置文件(/etc目录下cron.hourly,cron.daily,cron.weekly,cron.monthly,cron.d五个目录和crontab,cron.deny二个文件)
+# 全局配置文件
 <pre><code>
 ls -l /etc/ | grep -w "cron"
 
-cron.daily是每天执行一次的job
-cron.weekly是每个星期执行一次的job
-cron.monthly是每月执行一次的job
-cron.hourly是每个小时执行一次的job
-cron.d是系统自动定期需要做的任务
-crontab是设定定时任务执行文件
-cron.deny文件就是用于控制不让哪些用户使用Crontab的功能
+cron.daily 每天执行一次的job
+cron.weekly 每个星期执行一次的job
+cron.monthly 每月执行一次的job
+cron.hourly 每个小时执行一次的job
+cron.d 系统自动定期需要做的任务
+crontab 设定定时任务执行文件
+cron.deny 用于控制不让哪些用户使用Crontab的功能
 </code></pre>
 
 # crontab命令
