@@ -67,6 +67,14 @@ chown $(id -u):$(id -g) $HOME/.kube/config
 </code>
 </pre>
 
+# Node节点
+Master节点初始化成功后输出如下
+<pre>
+<code>
+kubeadm join 172.18.61.63:6443 --token b6a7mm.lhsec1zstpv4b9o6 \
+    --discovery-token-ca-cert-hash sha256:cbcc28444595bd712b4a638e52861e6b0c12d089f1a8f9086d95802c1985fb27
+</code>
+</pre>
 
 [m.unixhot.com](http://m.unixhot.com/kubernetes/kubernetes-aliyun.html)  
 [www.kubernetes.org.cn](https://www.kubernetes.org.cn/5462.html)  
