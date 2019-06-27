@@ -1,4 +1,4 @@
-下载地址 https://www.mongodb.com/download-center#community
+[安装包下载地址](https://www.mongodb.com/download-center#community)
 # 创建安装目录
 mkdir /usr/local/mongodb  
 mkdir /usr/local/mongodb/mongodbserver  
