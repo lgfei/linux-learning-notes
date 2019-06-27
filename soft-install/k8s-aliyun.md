@@ -53,7 +53,7 @@ systemctl enable kubelet && systemctl start kubelet
 初始化
 <pre>
 <code>
-kubeadm init --apiserver-advertise-address=172.18.61.63 --image-repository registry.aliyuncs.com/google_containers --kubernetes-version v1.15.0 --service-cidr=10.1.0.0/16 --pod-network-cidr=10.2.0.0/16 --ignore-preflight-errors=NumCPU
+kubeadm init --apiserver-advertise-address=yourIP --image-repository registry.aliyuncs.com/google_containers --kubernetes-version v1.15.0 --service-cidr=10.1.0.0/16 --pod-network-cidr=10.2.0.0/16 --ignore-preflight-errors=NumCPU
 </code>
 </pre>
 为kubectl准备Kubeconfig文件
@@ -76,14 +76,14 @@ kubectl apply -f https://docs.projectcalico.org/v3.3/getting-started/kubernetes/
 加入集群（Master节点初始化成功后输出如下）
 <pre>
 <code>
-kubeadm join 172.18.61.63:6443 --token b6a7mm.lhsec1zstpv4b9o6 \
+kubeadm join yourIP:6443 --token b6a7mm.lhsec1zstpv4b9o6 \
     --discovery-token-ca-cert-hash sha256:cbcc28444595bd712b4a638e52861e6b0c12d089f1a8f9086d95802c1985fb27
 </code>
 </pre>
 添加标签
 <pre>
 <code>
-kubectl label nodes sz-aliyun-47-112-218-231-lgfei-com node-role.kubernetes.io/node=
+kubectl label nodes yourNodeName node-role.kubernetes.io/node=
 </code>
 </pre>
 
