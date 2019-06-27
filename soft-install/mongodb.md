@@ -9,17 +9,20 @@ tar -zxvf mongodb-linux-x86_64-3.4.0.tgz -C /usr/local/mongodb/mongodbserver
 # 添加配置
 mkdir /usr/local/mongodb/mongodbserver/data  
 mkdir /usr/local/mongodb/mongodbserver/log  
-mkdir /usr/local/mongodb/mongodbserver/conf  
-cd /usr/local/mongodb/mongodbserver/conf  
-echo '' > mongodb.conf
+mkdir /usr/local/mongodb/mongodbserver/conf    
 
 # mongodb.conf 的内容
+cd /usr/local/mongodb/mongodbserver/conf  
+touch mongodb.conf  
+vim mongodb.conf
+<code>
 dbpath=/usr/local/mongodb/mongodbserver/data  
 logpath=/usr/local/mongodb/mongodbserver/log/mongodb.log  
 port=27017  
 fork=true  
 journal=false  
-storageEngine=mmapv1  
+storageEngine=mmapv1 
+</code>
 
 # 启动
 cd /usr/local/mongodb/mongodbserver/bin    
