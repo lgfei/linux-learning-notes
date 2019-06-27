@@ -86,6 +86,14 @@ kubeadm join yourIP:6443 --token b6a7mm.lhsec1zstpv4b9o6 \
 kubectl label nodes yourNodeName node-role.kubernetes.io/node=
 </code>
 </pre>
+配置admin.conf
+<pre>
+<code>
+复制主节点的/etc/kubernetes/admin.conf到从节点的相同目录下
+echo "export KUBECONFIG=/etc/kubernetes/admin.conf" >> ~/.bash_profile
+source ~/.bash_profile
+</code>
+</pre>
 
 # 查看部署结果
 <pre>
@@ -96,13 +104,7 @@ kubectl get pods --all-namespaces
 </code>
 </pre>
 
-# 来源
+# 参考来源
 [m.unixhot.com](http://m.unixhot.com/kubernetes/kubernetes-aliyun.html)  
 [www.kubernetes.org.cn](https://www.kubernetes.org.cn/5462.html)  
 [connection to the server localhost:8080 was refused...](https://www.jianshu.com/p/6fa06b9bbf6a)  
-<pre>
-<code>
-echo "export KUBECONFIG=/etc/kubernetes/admin.conf" >> ~/.bash_profile
-source ~/.bash_profile
-</code>
-</pre>
