@@ -15,6 +15,7 @@ mkdir /usr/local/mongodb/mongodbserver/conf
 cd /usr/local/mongodb/mongodbserver/conf  
 touch mongodb.conf  
 vim mongodb.conf
+<pre>
 <code>
 dbpath=/usr/local/mongodb/mongodbserver/data  
 logpath=/usr/local/mongodb/mongodbserver/log/mongodb.log  
@@ -23,6 +24,7 @@ fork=true
 journal=false  
 storageEngine=mmapv1 
 </code>
+</pre>
 
 # 启动
 cd /usr/local/mongodb/mongodbserver/bin    
@@ -35,10 +37,12 @@ http://ip:27017/
 # 添加管理用户(mongoDB 没有无敌用户root，只有能管理用户的用户 userAdminAnyDatabase)，利用mongo命令连接mongoDB服务器端
 cd /usr/local/mongodb/mongodbserver/bin  
 ./mongo    
-<pre><code>
+<pre>
+<code>
 use admin 
 db.createUser({user:"admin",pwd:"admin",roles:[{ role:"userAdminAnyDatabase", db:"admin" }]}); 
-</code></pre>
+</code>
+</pre>
 添加完用户后可以使用show users或db.system.users.find()查看已有用户.  
 添加完管理用户后，使用db.shutdownServer()关闭MongoDB，并使用权限方式再次开启MongoDB，这里注意不要使用kill直接去杀掉mongodb进程，（如果这样做了，请去data/db目录下删除mongo.lock文件） 
 出现以下错误，是因为用户权限问题  
@@ -51,7 +55,8 @@ _getErrorWithCode@src/mongo/shell/utils.js:25:13
 DB.prototype.shutdownServer@src/mongo/shell/db.js:302:1  
 @(shell):1:1  
 修改用户权限
-<pre><code>
+<pre>
+<code>
 db.updateUser(  
  "admin",  
         {  
@@ -62,7 +67,8 @@ db.updateUser(
                    ]  
         }  
  ) 
- </code></pre>
+</code>
+</pre>
 
 # 使用权限方式启动MongoDB
 在配置文件中添加：auth=true , 然后启动  
@@ -83,7 +89,8 @@ ln -s /usr/local/mongobd/mongodbserver/bin/mongo  /usr/bin/mongo
 # MongoDB设置为系统服务并且设置开机启动
 vim /etc/rc.d/init.d/mongod  
 内容如下：
-<pre><code>
+<pre>
+<code>
 #!/bin/bash  
 #chkconfig:2345 10 90  
 #description:service mongodb   
@@ -112,7 +119,8 @@ restart)
 $"Usage: $0 {start|stop|restart}"  
  exit 1  
 esac
-</code></pre>
+</code>
+</pre>
 
 保存完成之后，添加脚本执行权限，命令如下：chmod +x /etc/rc.d/init.d/mongod  
 使用下面命令启动，停止，重启  
