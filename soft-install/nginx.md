@@ -12,7 +12,7 @@ systemctl disable nginx
 systemctl start nginx  
 systemctl stop nginx  
 systemctl restart nginx  
-systemctl reload nginx 
+systemctl reload nginx   
 systemctl status nginx 
 
 
