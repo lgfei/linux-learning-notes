@@ -105,7 +105,6 @@ kubectl get pods --all-namespaces
 </pre>
 
 # 镜像仓库Harbor部署
-# 镜像仓库Harbor部署
 <pre>
 https://github.com/vmware/harbor/releases
 建议下载offline的压缩包，里面包含了harbor启动所用的所有docker镜像，可以快速的部署harbor
