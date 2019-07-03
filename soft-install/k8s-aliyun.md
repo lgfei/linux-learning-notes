@@ -105,7 +105,6 @@ kubectl get pods --all-namespaces
 </pre>
 
 # 镜像仓库Harbor部署
-<pre>
 https://github.com/vmware/harbor/releases
 建议下载offline的压缩包，里面包含了harbor启动所用的所有docker镜像，可以快速的部署harbor
 (```)
@@ -147,7 +146,6 @@ web登录：http://192.168.10.1  默认用户名密码  admin/Harbor12345
 docker tag centos:latest 192.168.10.1/system/centos:latest
 docker push 192.168.10.1/system/centos:latest
 </code>
-</pre>
 
 # 参考来源
 [m.unixhot.com](http://m.unixhot.com/kubernetes/kubernetes-aliyun.html)  
