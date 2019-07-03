@@ -5,7 +5,7 @@
 
 # 安装部署
 <pre>
-现在安装jdk
+先安装jdk
 cd /usr/local
 mkdir rundeck
 将下载好的rundeck-3.0.23-20190619.war上传到/usr/local/rundeck
