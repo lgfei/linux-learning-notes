@@ -105,23 +105,22 @@ kubectl get pods --all-namespaces
 </pre>
 
 # 镜像仓库Harbor部署
+# 镜像仓库Harbor部署
+<pre>
 https://github.com/vmware/harbor/releases
 建议下载offline的压缩包，里面包含了harbor启动所用的所有docker镜像，可以快速的部署harbor
-(```)
 cd /usr/local/src
 wget https://storage.googleapis.com/harbor-releases/release-1.8.0/harbor-offline-installer-v1.8.1.tgz
 tar zxf harbor-offline-installer-v1.8.1.tgz
-(```)
+
 Harbor的每个组件都是以Docker容器的形式构建的，使用Docker Compose来对它进行部署，你可以查看docker-compose.yml文件
 Docker Compose安装
-<code>
 yum install -y docker-compose
 docker-compose --version
-</code>
+
 通过docker-compose.yml修改端口
 通过harbor.yml修改hostname
 如果使用http的方式配置harbor需要为所有Docker添加信任配置。
-<code>
 vim /etc/docker/daemon.json
 {
 
@@ -131,21 +130,20 @@ vim /etc/docker/daemon.json
 
 }
 systemctl restart docker
-</code>
+
 安装Harbor
-<code>
 cd /usr/local/src/harbor/
 ./install.sh
 docker-compose ps
-</code>
+
 使用Harbor管理Registry 
 web登录：http://192.168.10.1  默认用户名密码  admin/Harbor12345
 后台登录：docker login http://192.168.10.1
+
 提交镜像到Registry
-<code>
 docker tag centos:latest 192.168.10.1/system/centos:latest
 docker push 192.168.10.1/system/centos:latest
-</code>
+</pre>
 
 # 参考来源
 [m.unixhot.com](http://m.unixhot.com/kubernetes/kubernetes-aliyun.html)  
