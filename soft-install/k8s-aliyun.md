@@ -108,11 +108,11 @@ kubectl get pods --all-namespaces
 <pre>
 https://github.com/vmware/harbor/releases
 建议下载offline的压缩包，里面包含了harbor启动所用的所有docker镜像，可以快速的部署harbor
-<code>
+(```)
 cd /usr/local/src
 wget https://storage.googleapis.com/harbor-releases/release-1.8.0/harbor-offline-installer-v1.8.1.tgz
 tar zxf harbor-offline-installer-v1.8.1.tgz
-</code>
+(```)
 Harbor的每个组件都是以Docker容器的形式构建的，使用Docker Compose来对它进行部署，你可以查看docker-compose.yml文件
 Docker Compose安装
 <code>
