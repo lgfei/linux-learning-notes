@@ -144,6 +144,22 @@ docker tag centos:latest 192.168.10.1/system/centos:latest
 docker push 192.168.10.1/system/centos:latest
 </pre>
 
+# 遇见的问题
+1. 删除pod后，pod会自动重启
+因为rc还存在，应先删除rc
+<pre>
+kubectl get rc
+kubectl delete rc
+</pre>
+
+2. 拉取不到最新的镜像
+因为当你的版本和上次一样时，可能拉取的镜像不是最新的，在app_deploy_rc.yaml镜像拉取策略有3种
+<pre>
+imagePullPolicy: Always // 总是从镜像库种拉取
+imagePullPolicy: IfNotPresent // 如果本地不存在才从镜像库种拉取
+imagePullPolicy: Nerver // 只从本地拉取镜像
+</pre>
+
 # 参考来源
 [m.unixhot.com](http://m.unixhot.com/kubernetes/kubernetes-aliyun.html)  
 [www.kubernetes.org.cn](https://www.kubernetes.org.cn/5462.html)  
