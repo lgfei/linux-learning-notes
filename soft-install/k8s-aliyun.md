@@ -145,11 +145,10 @@ docker push 192.168.10.1/system/centos:latest
 </pre>
 
 # 遇见的问题
-1. 删除pod后，pod会自动重启
-因为rc还存在，应先删除rc
+1. 删除pod后，pod会自动重启，因为rc还存在，应先删除rc
 <pre>
 kubectl get rc
-kubectl delete rc
+kubectl delete rc <rc>
 </pre>
 
 2. 拉取不到最新的镜像
