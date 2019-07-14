@@ -1,4 +1,4 @@
-# 创建用户mayun并指定用户根路径为/home/mayun，且在/home/mayun有读写权限
+# 创建用户mayun并指定用户根路径为/home/mayun，且在/home/mayun目录下有读写权限
 <pre>
 新建用户
 useradd -d /home/mayun mayun
