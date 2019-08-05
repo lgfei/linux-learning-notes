@@ -59,6 +59,15 @@ chown $(id -u):$(id -g) $HOME/.kube/config
 kubectl apply -f https://docs.projectcalico.org/v3.3/getting-started/kubernetes/installation/hosted/canal/rbac.yaml
 kubectl apply -f https://docs.projectcalico.org/v3.3/getting-started/kubernetes/installation/hosted/canal/canal.yaml
 </pre>
+消除master节点的隔离（可选）
+<pre>
+默认情况下，k8s是不会在master节点上自动部署业务上需要的应用的，如果是测试环境机器数量比较少，可以将这个隔离给去掉
+kubectl taint nodes --all node-role.kubernetes.io/master-
+会看到类似这样的输出
+node/izm5e9951st9peq42t8fkxz untainted
+error: taint "node-role.kubernetes.io/master:" not found
+说明已经消除了隔离
+</pre>
 
 # 部署Node节点
 加入集群（Master节点初始化成功后输出如下）
