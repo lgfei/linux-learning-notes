@@ -28,7 +28,7 @@ gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors
 yum install -y kubelet kubeadm kubectl  
 vim /etc/sysconfig/kubelet
 <pre>
-KUBELET_EXTRA_ARGS="--fail-swap-on=false"
+KUBELET_EXTRA_ARGS=--fail-swap-on=false
 </pre>
 vim /etc/sysctl.d/k8s.conf
 <pre>
