@@ -46,7 +46,7 @@ systemctl enable kubelet && systemctl start kubelet
 # 部署Master节点
 初始化
 <pre>
-kubeadm init --apiserver-advertise-address=yourIP --image-repository registry.aliyuncs.com/google_containers --kubernetes-version v1.15.0 --service-cidr=10.1.0.0/16 --pod-network-cidr=10.2.0.0/16 --ignore-preflight-errors=NumCPU
+kubeadm init --apiserver-advertise-address=yourIP --image-repository registry.aliyuncs.com/google_containers --kubernetes-version yourK8sVersion --service-cidr=10.1.0.0/16 --pod-network-cidr=10.2.0.0/16 --ignore-preflight-errors=NumCPU
 </pre>
 为kubectl准备Kubeconfig文件
 <pre>
