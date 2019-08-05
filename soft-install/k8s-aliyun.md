@@ -37,6 +37,8 @@ net.bridge.bridge-nf-call-ip6tables = 1
 net.bridge.bridge-nf-call-iptables = 1
 
 net.ipv4.ip_forward = 1
+
+vm.swappiness=0
 </pre>
 sysctl --system  
 systemctl enable kubelet && systemctl start kubelet
@@ -81,7 +83,7 @@ source ~/.bash_profile
 # 查看部署结果
 <pre>
 kubectl get cs
-kubectl get node --show-lables
+kubectl get node --show-labels
 kubectl get pods --all-namespaces
 </pre>
 
