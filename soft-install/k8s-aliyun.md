@@ -75,18 +75,18 @@ node/izm5e9951st9peq42t8fkxz untainted
 kubeadm join yourIP:6443 --token b6a7mm.lhsec1zstpv4b9o6 \
     --discovery-token-ca-cert-hash sha256:cbcc28444595bd712b4a638e52861e6b0c12d089f1a8f9086d95802c1985fb27
 </pre>
+配置admin.conf
+<pre>
+复制主节点的/etc/kubernetes/admin.conf到从节点的相同目录下
+echo "export KUBECONFIG=/etc/kubernetes/admin.conf" >> ~/.bash_profile
+source ~/.bash_profile
+</pre>
 标签管理
 <pre>
 kubectl label nodes yourNodeName node-role.kubernetes.io/node=  // 标记为node节点
 kubectl label nodes yourNodeName k8s.lgfei.com/namespace=kube-lgfei-test // 添加标签
 kubectl label nodes yourNodeName k8s.lgfei.com/namespace=kube-lgfei-prd --overwrite // 修改标签
 kubectl label nodes yourNodeName k8s.lgfei.com/namespace- // 删除标签
-</pre>
-配置admin.conf
-<pre>
-复制主节点的/etc/kubernetes/admin.conf到从节点的相同目录下
-echo "export KUBECONFIG=/etc/kubernetes/admin.conf" >> ~/.bash_profile
-source ~/.bash_profile
 </pre>
 
 # 查看部署结果
