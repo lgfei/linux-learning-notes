@@ -1,4 +1,5 @@
 # 安装docker
+启动之前先检查/etc/docker/daemon.json
 <pre>
 cd /etc/yum.repos.d/
 wget https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
