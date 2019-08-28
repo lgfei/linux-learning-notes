@@ -66,7 +66,6 @@ kubectl apply -f https://docs.projectcalico.org/v3.3/getting-started/kubernetes/
 kubectl taint nodes --all node-role.kubernetes.io/master-
 会看到类似这样的输出
 node/izm5e9951st9peq42t8fkxz untainted
-error: taint "node-role.kubernetes.io/master:" not found
 说明已经消除了隔离
 </pre>
 
