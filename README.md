@@ -21,4 +21,8 @@ dos2unix xxx.sh
 ```
 cat /etc/selinux/config
 ```
-
+解压缩命令
+```
+tar -zcvf 压缩文件名 .tar.gz 被压缩文件名
+tar -zxvf 压缩文件名.tar.gz
+```
