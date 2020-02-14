@@ -1,5 +1,4 @@
-# linux-learning-notes
-linux 学习笔记
+# linux-learning-notes linux 学习笔记
 
 查看centos版本
 ```
