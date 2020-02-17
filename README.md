@@ -12,6 +12,10 @@ reboot
 ```
 journalctl -xefu xxx
 ```
+查看端口占用
+```
+netstat -lnp|grep 8080
+```
 windows系统编写的sh文件再linux执行不了，需要用dos2unix进行格式转化
 ```
 yum install -y dos2unix
