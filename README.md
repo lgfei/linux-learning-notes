@@ -37,6 +37,6 @@ tar -zxvf 压缩文件名.tar.gz
 ```
 修改ssh端口
 ```
-sed -i 's/#Port 22/Port 2222/' /etc/ssh/sshd_config
+sed -i 's/Port 22/Port 2222/' /etc/ssh/sshd_config
 service sshd restart
 ```
