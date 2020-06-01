@@ -33,4 +33,10 @@ cat /etc/selinux/config
 ```
 tar -zcvf 压缩文件名 .tar.gz 被压缩文件名
 tar -zxvf 压缩文件名.tar.gz
+
+```
+修改ssh端口
+```
+sed -i 's/#Port 22/Port 2222/' /etc/ssh/sshd_config
+service sshd restart
 ```
