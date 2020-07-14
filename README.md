@@ -55,3 +55,11 @@ cat /proc/cpuinfo| grep "processor"| wc -l
 ```
 dmidecode -s system-product-name
 ```
+## 修改主机名
+```
+#立即生效，重启后失效
+hostname myhostname
+#永久生效，重启后生效
+echo "HOSTNAME=myhostname" >> /etc/sysconfig/network
+echo "192.168.0.1 myhostname" >> /etc/hosts
+```
